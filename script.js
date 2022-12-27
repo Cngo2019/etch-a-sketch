@@ -17,6 +17,7 @@ function createCell() {
     divBlock.innerHTML = "";
     return divBlock;
 }
+
 // This function simply removes the container's divs
 function removeCells(bodyNode) {
     while (bodyNode.hasChildNodes()) {
