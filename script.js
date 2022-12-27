@@ -36,9 +36,9 @@ initializeGrid(16);
 // Add a click event listener when user wants to change size of grid
 const changeSizeButton = document.getElementById("changeSize");
 changeSizeButton.addEventListener('click', () => {
-    let numCells = prompt("Enter in the size you want the grid: ");
+    let numCells = prompt("Enter in the size you want the grid between 0 and 100: ");
     while (numCells == "" || numCells > 100) {
-        numCells = prompt("You entered an invalid entry. Please try again: ");
+        numCells = prompt("You entered an invalid entry. Please enter a number between 0 and 100: ");
     }
 
     // Need to remove the individual cells 
