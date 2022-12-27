@@ -1,4 +1,10 @@
-function changeGrid(numCells) {
+function initializeGrid() {
+    let numCells = prompt("Enter in the size you want the grid: ");
+    
+    while (numCells == "" || numCells > 100) {
+        numCells = prompt("You entered an invalid entry. Please try again: ");
+    }
+
     const body = document.getElementById("container");
     body.style.setProperty('grid-template-columns', `repeat(${numCells}, 1fr)`);
     body.style.setProperty('grid-template-rows', `repeat(${numCells}, 1fr)`);
@@ -28,4 +34,13 @@ function removeCells(bodyNode) {
 function colorCell(e) {
     e.target.style.backgroundColor = 'red';
 }
-changeGrid(16);
+
+
+initializeGrid();
+
+const changeSizeButton = document.getElementById("changeSize");
+changeSizeButton.addEventListener('click', () => {
+    const body = document.getElementById("container");
+    removeCells(body);
+    initializeGrid();
+});
